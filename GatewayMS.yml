@@ -1,6 +1,8 @@
 server:
   port: 9102
 spring:
+  application:
+    name: GatewayMS
   cloud:
     discovery:
       enabled: true
@@ -33,5 +35,3 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true
-
-
