@@ -22,3 +22,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+    
+  kafka:
+    producer:
+      bootstrap-servers:
+        - localhost:9092
+    topic-name: "com-coconut"
