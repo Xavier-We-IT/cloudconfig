@@ -13,6 +13,12 @@ spring:
           uri: lb://AccountManagementMS
           predicates:
             - Path=/api/account/**
+kafka:
+  producer:
+    bootstrap-servers:
+      - localhost:9092
+  topic-name: "com-coconut"
+
   main:
     web-application-type: reactive
   security:
@@ -28,6 +34,7 @@ spring:
             client-secret: 913d4391-6935-4198-92fe-3311868ea269
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:9102/login/oauth2/code/keycloak
+  
 
 eureka:
   client:
