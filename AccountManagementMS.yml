@@ -1,24 +1,58 @@
 server:
-  port: 8080
+  port: 9103
+
 spring:
+  application:
+    name: AccountManagementMS
+  messages:
+    basename: i18n/messages
   datasource:
-    url: jdbc:postgresql://localhost:5432/coconutconnection
-    username: coconutconnection
+    url: jdbc:postgresql://localhost:5432/matchit
+    username: matchit
+  cloud:
+    discovery:
+      enabled: true
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
-#  liquibase:
-#    change-log=classpath:db/changelog/master.xml:
-#  zipkin:
-#    base-url: http://zipkin:9411
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
+  liquibase:
+    change-log: classpath:db/liquibase/master.xml
+  #  zipkin:
+  #    base-url: http://zipkin:9411
+  kafka:
+    producer:
+      bootstrap-servers:
+        - localhost:9092
+    bootstrap-servers: localhost:9092
+    topic-name: "com-matchit"
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: DEBUG
+
+keycloak:
+  realm: matchit
+  auth-server-url: http://185.215.166.203:8090/auth
+  credentials:
+    client-id: matchit-client
+    secret: lgiA93HfXeimadoVrnBxgUgV1td25RkY

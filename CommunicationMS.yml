@@ -1,0 +1,35 @@
+server:
+  port: 9163
+
+spring:
+  application:
+    name: CommunicationMS
+  kafka:
+    consumer:
+      bootstrap-servers:
+        - localhost:9092
+      group-id: matchit
+    topic-name: "com-matchit"
+
+  mail:
+    base-url: https://coconutconnection.fr
+    host: smtp.gmail.com
+    port: 587
+    username: noreply@we-it.co
+    password: WefounD-69002
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+
+  messages:
+    basename: i18n/messages
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

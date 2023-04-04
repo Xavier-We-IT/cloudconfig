@@ -1,33 +1,41 @@
 server:
   port: 9102
+
 spring:
   application:
     name: GatewayMS
   cloud:
-    discovery:
-      enabled: true
     gateway:
-      default-filters: TokenRelay
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+      default-filters:
+        - TokenRelay
       routes:
         - id: route-account-management
           uri: lb://AccountManagementMS
           predicates:
             - Path=/api/account/**
-  main:
-    web-application-type: reactive
+          filters:
+            - RemoveRequestHeader=Cookie
   security:
     oauth2:
       client:
         provider:
           keycloak-sso:
-            issuer-uri: http://185.215.166.203:8090/auth/realms/coconutconnectionrealm
+            issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
         registration:
           GatewayMs:
             provider: keycloak-sso
-            client-id: coconutconnection
-            client-secret: 913d4391-6935-4198-92fe-3311868ea269
-            authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:9102/login/oauth2/code/keycloak
+            client-id: matchit-client
+            client-secret: lgiA93HfXeimadoVrnBxgUgV1td25RkY
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   client:
@@ -35,3 +43,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: DEBUG
