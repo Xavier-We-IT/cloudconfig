@@ -32,8 +32,8 @@ spring:
         registration:
           GatewayMs:
             provider: keycloak-sso
-            client-id: matchit-client
-            client-secret: lgiA93HfXeimadoVrnBxgUgV1td25RkY
+            client-id: matchit-gwt-client
+            client-secret: 1IIhCehnvqvatDFx3VSyrm2pzK2p570k
   main:
     allow-bean-definition-overriding: true
 

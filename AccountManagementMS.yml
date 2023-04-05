@@ -54,5 +54,5 @@ keycloak:
   realm: matchit
   auth-server-url: http://185.215.166.203:8090/auth
   credentials:
-    client-id: matchit-client
-    secret: lgiA93HfXeimadoVrnBxgUgV1td25RkY
+    client-id: matchit-account-client
+    secret: JuhkESGo4aFe2wpa7sfJYq1rq74vQyQb
