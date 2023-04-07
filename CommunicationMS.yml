@@ -12,7 +12,7 @@ spring:
     topic-name: "com-matchit"
 
   mail:
-    base-url: https://coconutconnection.fr
+    base-url: http://localhost:4200
     host: smtp.gmail.com
     port: 587
     username: noreply@we-it.co
