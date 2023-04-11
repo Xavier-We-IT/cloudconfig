@@ -1,0 +1,62 @@
+server:
+  port: 9104
+
+spring:
+  application:
+    name: SourcingMS
+  messages:
+    basename: i18n/messages
+  datasource:
+    url: jdbc:postgresql://localhost:5432/matchit-sourcing
+    username: matchit
+  cloud:
+    discovery:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
+  web:
+    cors:
+      allowedOrigins: "http://localhost:4200"
+      allowedHeaders: "*"
+      allowedMethods:
+        - GET
+        - POST
+        - DELETE
+        - PUT
+        - PATCH
+      max-age: 3600
+  liquibase:
+    change-log: classpath:db/liquibase/master.xml
+  #  zipkin:
+  #    base-url: http://zipkin:9411
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: DEBUG
+
+keycloak:
+  realm: matchit
+  auth-server-url: http://185.215.166.203:8090/auth
+  credentials:
+    client-id: matchit-sourcing-client
+    secret: eiWNTsSGUsz91ACD8vP9tl2KK7XpTXea
