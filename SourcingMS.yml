@@ -8,7 +8,7 @@ spring:
     basename: i18n/messages
   datasource:
     url: jdbc:postgresql://localhost:5432/matchit-sourcing
-    username: matchit
+    username: matchit-sourcing
   cloud:
     discovery:
       enabled: true

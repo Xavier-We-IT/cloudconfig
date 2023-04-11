@@ -7,8 +7,8 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    url: jdbc:postgresql://localhost:5432/matchit
-    username: matchit
+    url: jdbc:postgresql://localhost:5432/matchit-account
+    username: matchit-account
   cloud:
     discovery:
       enabled: true
