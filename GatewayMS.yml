@@ -23,6 +23,12 @@ spring:
             - Path=/api/account/**
           filters:
             - RemoveRequestHeader=Cookie
+        - id: route-sourcing-management
+          uri: lb://SourcingMS
+          predicates:
+            - Path=/api/sourcing/**
+          filters:
+            - RemoveRequestHeader=Cookie
   security:
     oauth2:
       client:
