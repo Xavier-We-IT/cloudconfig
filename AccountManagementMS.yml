@@ -27,7 +27,7 @@ spring:
           issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
   web:
     cors:
-      allowedOrigins: "http://localhost:4200"
+      allowedOrigins: "*"
       allowedHeaders: "*"
       allowedMethods:
         - GET
