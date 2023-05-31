@@ -6,14 +6,6 @@ spring:
     name: GatewayMS
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedHeaders: "*"
-            allowedMethods:
-              - GET
-              - POST
       default-filters:
         - TokenRelay
       routes:
@@ -42,6 +34,8 @@ spring:
             client-secret: 1IIhCehnvqvatDFx3VSyrm2pzK2p570k
   main:
     allow-bean-definition-overriding: true
+
+front-end-url: "http://localhost:4200"
 
 eureka:
   client:
