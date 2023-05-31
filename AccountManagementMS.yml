@@ -25,17 +25,7 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
-  web:
-    cors:
-      allowedOrigins: "*"
-      allowedHeaders: "*"
-      allowedMethods:
-        - GET
-        - POST
-        - DELETE
-        - PUT
-        - PATCH
-      max-age: 3600
+
   liquibase:
     change-log: classpath:db/liquibase/master.xml
   #  zipkin:
@@ -53,6 +43,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
+front-end-url: "http://localhost:4200"
 
 logging:
   level:
