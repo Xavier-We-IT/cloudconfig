@@ -8,6 +8,14 @@ spring:
     gateway:
       default-filters:
         - TokenRelay
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: 'http://localhost:4200'
+            allowedHeaders: '*'
+            allowedMethods:
+              - GET
+              - POST
       routes:
         - id: route-account-management
           uri: lb://AccountManagementMS
@@ -24,18 +32,16 @@ spring:
   security:
     oauth2:
       client:
-        provider:
-          keycloak-sso:
-            issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
         registration:
           GatewayMs:
             provider: keycloak-sso
             client-id: matchit-gwt-client
             client-secret: 1IIhCehnvqvatDFx3VSyrm2pzK2p570k
+        provider:
+          keycloak-sso:
+            issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
   main:
     allow-bean-definition-overriding: true
-
-front-end-url: "http://localhost:4200"
 
 eureka:
   client:
