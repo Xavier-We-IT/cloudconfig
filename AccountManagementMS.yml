@@ -7,7 +7,7 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    url: jdbc:postgresql://localhost:5432/matchit-account
+    url: jdbc:postgresql://matchit-account-postgresql:5432/matchit-account
     username: matchit-account
   cloud:
     discovery:
@@ -33,17 +33,17 @@ spring:
   kafka:
     producer:
       bootstrap-servers:
-        - localhost:9092
-    bootstrap-servers: localhost:9092
+        - matchit-kafka:9092
+    bootstrap-servers: matchit-kafka:9092
     topic-name: "com-matchit"
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://matchit-eureka-server:8761/eureka
     fetch-registry: true
     register-with-eureka: true
 
-front-end-url: "http://localhost:4200"
+front-end-url: "http://matchit-frontend:4200"
 
 logging:
   level:

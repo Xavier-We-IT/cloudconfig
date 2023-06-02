@@ -7,7 +7,7 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    url: jdbc:postgresql://localhost:5433/matchit-sourcing
+    url: jdbc:postgresql://matchit-sourcing-postgresql:5433/matchit-sourcing
     username: matchit-sourcing
   cloud:
     discovery:
@@ -43,7 +43,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://matchit-eureka-server:8761/eureka
     fetch-registry: true
     register-with-eureka: true
 

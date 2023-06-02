@@ -7,12 +7,12 @@ spring:
   kafka:
     consumer:
       bootstrap-servers:
-        - localhost:9092
+        - matchit-kafka:9092
       group-id: matchit
     topic-name: "com-matchit"
 
   mail:
-    base-url: http://localhost:4200
+    base-url: http://matchit-frontend:4200
     host: smtp.gmail.com
     port: 587
     username: noreply@we-it.co
@@ -30,6 +30,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://matchit-eureka-server:8761/eureka
     fetch-registry: true
     register-with-eureka: true
