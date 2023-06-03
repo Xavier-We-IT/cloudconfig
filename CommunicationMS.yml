@@ -12,7 +12,7 @@ spring:
     topic-name: "com-matchit"
 
   mail:
-    base-url: http://matchit-frontend:4200
+    base-url: https://match-it.fr/
     host: smtp.gmail.com
     port: 587
     username: noreply@we-it.co

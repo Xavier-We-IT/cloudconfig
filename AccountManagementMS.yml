@@ -43,7 +43,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
-front-end-url: http://matchit-frontend:4200
+front-end-url: https://match-it.fr/
 
 logging:
   level:
