@@ -11,11 +11,13 @@ spring:
           '[/**]':
             allowedOrigins: "*"
             allowedHeaders: "*"
+            exposedHeaders: "Authorization,X-Total-Count,Link"
             allowedMethods:
               - GET
               - POST
               - OPTIONS
               - PUT
+              - DELETE
       routes:
         - id: route-account-management
           uri: lb://AccountManagementMS
