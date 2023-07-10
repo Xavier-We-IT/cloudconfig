@@ -13,16 +13,16 @@ spring:
 
   mail:
     base-url: http://localhost:4200
-    host: smtp.gmail.com
+    host: smtp.ionos.fr
     port: 587
-    username: noreply@we-it.co
-    password: WefounD-69002
+    username: noreply@match-it.fr
+    password: MatchiT-69002
     protocol: smtp
     tls: true
     properties.mail.smtp:
       auth: true
       starttls.enable: true
-      ssl.trust: smtp.gmail.com
+      ssl.trust: smtp.ionos.fr
 
   messages:
     basename: i18n/messages
