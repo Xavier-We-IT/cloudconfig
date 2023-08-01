@@ -8,14 +8,19 @@ spring:
     gateway:
       globalcors:
         corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedHeaders: "*"
+          '[/api/**]':
+            allowedOrigins:
+              - https://match-it.fr
+              - http://localhost:4200
+            allowedHeaders:
+              - Authorization
+              - Content-Type
             allowedMethods:
               - GET
               - POST
               - OPTIONS
               - PUT
+              - DELETE
       routes:
         - id: route-account-management
           uri: lb://AccountManagementMS
