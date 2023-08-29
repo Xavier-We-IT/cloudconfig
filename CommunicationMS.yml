@@ -1,5 +1,5 @@
 server:
-  port: 9163
+  port: ${COMMUNICATION_MS_PORT}
 
 spring:
   application:
@@ -7,22 +7,22 @@ spring:
   kafka:
     consumer:
       bootstrap-servers:
-        - localhost:9092
+        - ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
       group-id: matchit
     topic-name: "com-matchit"
 
   mail:
-    base-url: http://localhost:4200
-    host: smtp.ionos.fr
-    port: 587
-    username: noreply@match-it.fr
-    password: MatchiT-69002
-    protocol: smtp
+    base-url: ${GKE_FRONTEND_EXTERNAL_ADDRESS}
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    protocol: ${MAIL_PROTOCOL}
     tls: true
     properties.mail.smtp:
       auth: true
       starttls.enable: true
-      ssl.trust: smtp.ionos.fr
+      ssl.trust: ${MAIL_HOST}
 
   messages:
     basename: i18n/messages
@@ -30,6 +30,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
     fetch-registry: true
     register-with-eureka: true

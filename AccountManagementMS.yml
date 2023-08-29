@@ -1,5 +1,5 @@
 server:
-  port: 9103
+  port: ${ACCOUNT_MANAGEMENT_MS_PORT} 9103
 
 spring:
   application:
@@ -7,8 +7,8 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    url: jdbc:postgresql://localhost:5432/matchit-account
-    username: matchit-account
+    url: ${ACCOUNT_MANAGEMENT_MS_DATASOURCE_URL}
+    username: ${ACCOUNT_MANAGEMENT_MS_DATASOURCE_USER}
   cloud:
     discovery:
       enabled: true
@@ -24,26 +24,25 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://185.215.166.203:8090/auth/realms/matchit
+          issuer-uri: ${SECURITY_OAUTH2_JWT_ISSUER_URI}
 
   liquibase:
     change-log: classpath:db/liquibase/master.xml
-  #  zipkin:
-  #    base-url: http://zipkin:9411
+  
   kafka:
     producer:
       bootstrap-servers:
-        - localhost:9092
-    bootstrap-servers: localhost:9092
+        - ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
+    bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
     topic-name: "com-matchit"
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
     fetch-registry: true
     register-with-eureka: true
 
-front-end-url: "http://localhost:4200"
+front-end-url: ${GKE_FRONTEND_EXTERNAL_ADDRESS}
 
 logging:
   level:
@@ -53,8 +52,8 @@ logging:
           web: DEBUG
 
 keycloak:
-  realm: matchit
-  auth-server-url: http://185.215.166.203:8090/auth
+  realm: ${KEYCLOACK_REALM}
+  auth-server-url: ${KEYCLOACK_AUTH_SERVER_URL}
   credentials:
-    client-id: matchit-account-client
-    secret: JuhkESGo4aFe2wpa7sfJYq1rq74vQyQb
+    client-id: ${KEYCLOACK_CREDENTIALS_ACCOUNT_CLIENT_ID} matchit-account-client
+    secret: ${KEYCLOACK_CREDENTIALS_ACCOUNT_SECRET} JuhkESGo4aFe2wpa7sfJYq1rq74vQyQb
