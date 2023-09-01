@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: AccountManagementMS
+    name: we-find-it-account-svc
   messages:
     basename: i18n/messages
   datasource:

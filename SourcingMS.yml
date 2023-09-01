@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: SourcingMS
+    name: we-find-it-sourcing-svc
   messages:
     basename: i18n/messages
   datasource:
