@@ -6,7 +6,7 @@ spring:
     name: EurekaMS
   cloud:
     config:
-      enabled: false
+      enabled: true
 
 eureka:
   instance:
