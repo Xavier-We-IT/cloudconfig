@@ -1,5 +1,5 @@
 server:
-  port: ${ACCOUNT_MANAGEMENT_MS_PORT} 9103
+  port: ${ACCOUNT_MANAGEMENT_MS_PORT}
 
 spring:
   application:
