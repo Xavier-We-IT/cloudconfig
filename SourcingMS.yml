@@ -9,6 +9,7 @@ spring:
   datasource:
     url: ${SOURCING_MS_DATASOURCE_URL}
     username: ${SOURCING_MS_DATASOURCE_USER}
+    password: ${SOURCING_POSTGRES_USER_PASSWORD}
   cloud:
     discovery:
       enabled: true
