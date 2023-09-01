@@ -24,13 +24,13 @@ spring:
               - DELETE
       routes:
         - id: route-account-management
-          uri: lb://AccountManagementMS
+          uri: lb://${ACCOUNT_SVC_NAME}:${ACCOUNT_MANAGEMENT_MS_PORT}
           predicates:
             - Path=/api/account/**
           filters:
             - RemoveRequestHeader=Cookie
         - id: route-sourcing-management
-          uri: lb://SourcingMS
+          uri: lb://${SOURCING_SVC_NAME}:${SOURCING_MANAGEMENT_MS_PORT}
           predicates:
             - Path=/api/sourcing/**
           filters:
