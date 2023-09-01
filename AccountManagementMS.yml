@@ -9,6 +9,7 @@ spring:
   datasource:
     url: ${ACCOUNT_MANAGEMENT_MS_DATASOURCE_URL}
     username: ${ACCOUNT_MANAGEMENT_MS_DATASOURCE_USER}
+    password: ${ACCOUNT_MANAGEMENT_MS_DATASOURCE_PASSWORD}
   cloud:
     discovery:
       enabled: true
