@@ -47,7 +47,8 @@ spring:
       bootstrap-servers:
         - ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
     bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
-    topic-name: "com-matchit-sourcing"
+    topic-name: "com-matchit"
+    topic-name-sourcing: "com-matchit-sourcing"
 
 eureka:
   client:
