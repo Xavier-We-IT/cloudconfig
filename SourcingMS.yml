@@ -58,6 +58,7 @@ eureka:
     register-with-eureka: true
   instance:
     hostname: ${SOURCING_SVC_NAME}
+    lease-renewal-interval-in-seconds: 20
 
 logging:
   level:

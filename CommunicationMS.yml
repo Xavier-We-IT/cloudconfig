@@ -33,3 +33,5 @@ eureka:
       defaultZone: ${EUREKA_DEFAULT_ZONE}
     fetch-registry: true
     register-with-eureka: true
+  instance:
+    lease-renewal-interval-in-seconds: 20

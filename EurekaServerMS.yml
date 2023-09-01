@@ -11,8 +11,16 @@ spring:
 eureka:
   instance:
     hostname: ${EUREKA_INSTANCE}
+  lease:
+    duration-in-seconds: 90  # Lease duration for service instances (how often they send renewals)
+    renewal-interval-in-seconds: 30 
+  server:
+    eviction-interval-timer-in-ms: 60000  # Interval to run eviction tasks to remove stale instances
+    response-cache-update-interval-ms: 30000 
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
+    server-connect-timeout-seconds: 5  # Maximum time to establish a connection to the Eureka server
+    server-read-timeout-seconds: 30
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULT_ZONE} 

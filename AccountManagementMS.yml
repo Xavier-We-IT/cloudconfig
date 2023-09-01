@@ -44,6 +44,7 @@ eureka:
     register-with-eureka: true
   instance:
     hostname: ${ACCOUNT_SVC_NAME}
+    lease-renewal-interval-in-seconds: 20
 
 front-end-url: ${GKE_FRONTEND_EXTERNAL_ADDRESS}
 
