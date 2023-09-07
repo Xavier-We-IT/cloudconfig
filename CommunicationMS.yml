@@ -8,9 +8,14 @@ spring:
     bootstrap-servers:
       - ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
     consumer:
-      bootstrap-servers:
-        - ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
       group-id: matchit
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 500
+      concurrency: 3
     topic-name: "com-matchit"
 
   mail:
