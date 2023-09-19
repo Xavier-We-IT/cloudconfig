@@ -8,8 +8,8 @@ spring:
     consumer:
       bootstrap-servers:
         - localhost:9092
-      group-id: matchit
-    topic-name: "com-matchit"
+    topic-name-account: "com-matchit-account"
+    topic-name-sourcing: "com-matchit-sourcing"
 
   mail:
     base-url: http://localhost:4200

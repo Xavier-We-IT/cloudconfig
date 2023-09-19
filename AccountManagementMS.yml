@@ -28,14 +28,12 @@ spring:
 
   liquibase:
     change-log: classpath:db/liquibase/master.xml
-  #  zipkin:
-  #    base-url: http://zipkin:9411
   kafka:
     producer:
       bootstrap-servers:
         - localhost:9092
     bootstrap-servers: localhost:9092
-    topic-name: "com-matchit"
+    topic-name: "com-matchit-account"
 eureka:
   client:
     service-url:
