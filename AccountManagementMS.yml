@@ -35,7 +35,7 @@ spring:
       bootstrap-servers:
         - ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
     bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
-    topic-name: "com-matchit"
+    topic-name: "com-matchit-account"
 eureka:
   client:
     service-url:

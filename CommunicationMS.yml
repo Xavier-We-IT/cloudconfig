@@ -18,10 +18,13 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       max-poll-records: 500
       concurrency: 3
+    topic-name-account: "com-matchit-account"
+    topic-name-sourcing: "com-matchit-sourcing"
     listener:
       starting-offsets: earliest
-    template:
-      default-topic: "com-matchit"
+    
+    #template:
+    #  default-topic: "com-matchit"
 
   mail:
     base-url: ${GKE_FRONTEND_EXTERNAL_ADDRESS}
